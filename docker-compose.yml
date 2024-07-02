@@ -1,0 +1,30 @@
+networks:
+  productinventorymanagerapp:
+
+services:
+  productinventorymanagerappdb:
+    container_name: productinventorymanagerapp-db
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    ports:
+      - 8005:1433
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=password@12345#
+    networks:
+      - productinventorymanagerapp   
+  productinventorymanagerappserverapp:
+    container_name: productinventorymanagerapp-app
+    image: ${DOCKER_REGISTRY-}productinventorymanagerappserverapp
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8009:80
+    depends_on:
+      - productinventorymanagerappdb
+    environment:
+      - DB_HOST=productinventorymanagerappdb
+      - DB_NAME=ProductInventoryManager
+      - DB_SA_PASSWORD=password@12345#
+    networks:
+      - productinventorymanagerapp
