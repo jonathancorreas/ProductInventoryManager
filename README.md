@@ -23,7 +23,7 @@ Primero, clonar este repositorio en tu máquina local:
 ### Ejecutar archivo `docker-compose`
 
 Ingresar a la carpeta donde se clono el proyecto
-cd ProductInventoryManager
+`cd ProductInventoryManager`
 
 Luego ejecutar el siguiente comando `docker-compose up -d`
 
