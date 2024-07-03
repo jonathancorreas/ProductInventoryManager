@@ -1,7 +1,7 @@
 # Prueba Tecnica
 
 Este proyecto es una API RESTful que gestiona un sistema de inventario de productos,
-implementando con buenas prácticas de programación, patrones de diseño y principios SOLID.
+implementado con buenas prácticas de programación, patrones de diseño y principios SOLID.
 La solución esta dockerizada y utiliza una base de datos relacional SQL Server.
 
 ## Requisitos
